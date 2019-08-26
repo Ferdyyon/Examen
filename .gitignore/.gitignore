@@ -1,0 +1,62 @@
+String sentido= "D";
+int tam=100;
+int posX=50;// posicion en x
+
+void setup() {
+  size(500, 500); //tamaño
+  background(180);// fondo
+}
+
+int linea=100;
+void draw () {
+  fill(0, 0, 255);
+  rect(0, 0, 500, height/5);
+  fill(0, 255, 0);
+  rect(0, 100, 500, height/5);
+  fill(0, 0, 255);
+  rect(0, 200, 500, height/5);
+  fill(0, 255, 0);
+  rect(0, 300, 500, height/5);
+  fill(0, 0, 255);
+  rect(0, 400, 500, height/5);
+  line(0, linea, width, linea);
+  linea=linea+100;
+
+  line(0, 0, 8, 1);
+  point(0, 100);
+  point(2, 3);
+
+
+  fill(180);
+  rect(posX-25, 25, 110, 50);
+  ellipse(posX2, 50, 50, 50);
+  ellipse(posX, 50, tam, tam);
+
+  rect(posX-25, 125, 110, 50);
+  ellipse(posX, 150, tam, tam);
+
+  rect(posX-25, 225, 110, 50);
+  ellipse(posX, 250, tam, tam);
+
+  rect(posX-25, 325, 110, 50);
+  ellipse(posX, 350, tam, tam);
+
+  rect(posX-25, 425, 110, 50);
+  ellipse(posX, 450, tam, tam);
+  if (sentido== "D") {
+    posX++;
+  }
+
+  if (sentido== "I") {
+    posX--;
+  }
+  if (sentido== "H") {
+    posX--;
+  }
+  if (posX+ tam/2 >=width-50) {
+    sentido  = "I";
+  }
+  if (posX -tam/2<=50) {
+    sentido  = "D";
+  }
+}
